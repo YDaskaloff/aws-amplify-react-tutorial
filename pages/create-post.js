@@ -2,6 +2,7 @@ import { withAuthenticator } from '@aws-amplify/ui-react';
 import { API } from 'aws-amplify';
 import 'easymde/dist/easymde.min.css';
 import dynamic from 'next/dynamic';
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
@@ -15,7 +16,7 @@ const initialState = { title: '', content: '' };
 const CreatePost = () => {
     const [post, setPost] = useState(initialState);
     const { title, content } = post;
-    // const router = useRouter();
+    const router = useRouter();
 
     const onChange = (e) => {
         setPost(() => ({ ...post, [e.target.name]: e.target.value }));
@@ -32,7 +33,7 @@ const CreatePost = () => {
             variables: { input: post },
             authMode: 'AMAZON_COGNITO_USER_POOLS',
         });
-        // router.push(`/posts/${id}`);
+        router.push(`/posts/${id}`);
     };
 
     return (

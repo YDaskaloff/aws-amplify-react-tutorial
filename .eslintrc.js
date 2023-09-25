@@ -27,6 +27,12 @@ module.exports = {
             'babel-module': {},
         },
     },
+    compilerOptions: {
+        skipLibCheck: true,
+    },
+    exclude: [
+        "node_modules",
+    ],
     'rules': {
         'import/extensions': 0,
         'react-hooks/rules-of-hooks': 'error',
@@ -100,48 +106,8 @@ module.exports = {
             {
                 pathGroups: [
                     {
-                        pattern: '@/project/**',
+                        pattern: '@/**',
                         group: 'unknown',
-                    },
-                    {
-                        pattern: '@/context/**',
-                        group: 'unknown',
-                    },
-                    {
-                        pattern: '@/providers/**',
-                        group: 'unknown',
-                    },
-                    {
-                        pattern: '@/store/**',
-                        group: 'unknown',
-                    },
-                    {
-                        pattern: '@/types/**',
-                        group: 'unknown',
-                    },
-                    {
-                        pattern: '@/models/**',
-                        group: 'unknown',
-                    },
-                    {
-                        pattern: '@/components/**',
-                        group: 'internal',
-                    },
-                    {
-                        pattern: '@/screens/**',
-                        group: 'internal',
-                    },
-                    {
-                        pattern: '@/navigation/**',
-                        group: 'internal',
-                    },
-                    {
-                        pattern: '@/assets/**',
-                        group: 'internal',
-                    },
-                    {
-                        pattern: '@/style/**',
-                        group: 'sibling',
                     },
                 ],
                 groups: ['builtin', 'external', 'unknown', 'internal', 'parent', 'sibling', 'index', 'type'],
