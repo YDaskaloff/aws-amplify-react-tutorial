@@ -27,13 +27,8 @@ module.exports = {
             'babel-module': {},
         },
     },
-    compilerOptions: {
-        skipLibCheck: true,
-    },
-    exclude: [
-        "node_modules",
-    ],
     'rules': {
+        'comma-dangle': 0,
         'import/extensions': 0,
         'react-hooks/rules-of-hooks': 'error',
         'react/jsx-key': 0,
